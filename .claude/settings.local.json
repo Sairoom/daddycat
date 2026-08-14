@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"c:/Users/eroha/Desktop/daddy cat/daddycat\" && rm -f src/App.css src/App.js src/App.test.js src/index.css src/index.js src/logo.svg src/reportWebVitals.js src/setupTests.js public/logo192.png public/logo512.png && ls src public)",
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\);console.log\\(JSON.stringify\\(p.dependencies,null,1\\),JSON.stringify\\(p.devDependencies||{},null,1\\)\\)\")",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(sed -i 's/^  padding: 110px 0;$/  @include section-space\\(110px, 70px\\);/' About/About.scss)",
+      "Bash(sed -i 's/^  padding: 100px 0;$/  @include section-space;/' MenuPreview/MenuPreview.scss GamesPreview/GamesPreview.scss GalleryPreview/GalleryPreview.scss)",
+      "Bash(npx --yes serve -s build -l 4173)",
+      "Bash(curl -s -o /dev/null -w \"root: %{http_code}\\\\n\" http://localhost:4173/)",
+      "Bash(curl -s -o /dev/null -w \"route /games: %{http_code}\\\\n\" http://localhost:4173/games)",
+      "Bash(curl -s http://localhost:4173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/assets/photos/README.md)",
+      "Bash(pkill -f \"serve -s build\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\eroha\\Desktop\\daddy cat\\daddycat\\src"
+    ]
+  }
+}
