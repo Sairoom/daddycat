@@ -1,0 +1,27 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.page-hero {
+  padding: 72px 0 48px;
+
+  @include below($bp-sm) {
+    padding: 44px 0 32px;
+  }
+
+  &__kicker {
+    display: block;
+    @include label;
+    margin-bottom: 18px;
+  }
+
+  &__title {
+    font-size: clamp(36px, 5.4vw, 56px);
+    margin-bottom: 14px;
+  }
+
+  &__text {
+    max-width: 560px;
+    color: $color-text-muted;
+    margin: 0;
+  }
+}

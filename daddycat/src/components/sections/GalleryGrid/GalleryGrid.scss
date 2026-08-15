@@ -1,0 +1,39 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
+  // dense заполняет дыры, которые оставляют широкие и высокие плитки
+  grid-auto-flow: dense;
+  gap: 10px;
+
+  &__cell {
+    min-height: 0;
+
+    &--wide {
+      grid-column: span 2;
+    }
+
+    &--tall {
+      grid-row: span 2;
+    }
+  }
+
+  @include below($bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+
+  @include below($bp-sm) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+
+    &__cell--wide,
+    &__cell--tall {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+}

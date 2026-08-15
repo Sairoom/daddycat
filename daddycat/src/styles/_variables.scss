@@ -1,0 +1,26 @@
+// Палитра снята с интерьера: чёрные стены, латунь, тёплый свет.
+// Акцент один — латунь. Всё остальное держим в оттенках угля.
+
+$color-bg: #100d0b;
+$color-bg-soft: #171310;
+$color-line: rgba(238, 226, 210, 0.1);
+$color-line-strong: rgba(201, 150, 46, 0.35);
+
+$color-brass: #c9962e;
+$color-brass-light: #ddb45f;
+
+$color-text: #ece5db;
+$color-text-muted: #9c9084;
+$color-text-dim: #6f655b;
+
+$font-display: 'Playfair Display', Georgia, serif;
+$font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+$container: 1120px;
+$radius: 3px;
+
+$bp-sm: 560px;
+$bp-md: 860px;
+$bp-lg: 1100px;
+
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);

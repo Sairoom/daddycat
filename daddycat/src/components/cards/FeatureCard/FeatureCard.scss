@@ -1,0 +1,26 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.feature-card {
+  padding-top: 22px;
+  border-top: 1px solid $color-line;
+
+  &__num {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: $color-brass;
+  }
+
+  &__title {
+    font-size: 21px;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-text-muted;
+    font-size: 15px;
+  }
+}

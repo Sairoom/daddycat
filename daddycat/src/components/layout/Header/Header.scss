@@ -1,0 +1,202 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s $ease, border-color 0.4s $ease;
+
+  &--scrolled {
+    background: rgba(16, 13, 11, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom-color: $color-line;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 76px;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+
+    strong {
+      font-family: $font-display;
+      font-weight: 400;
+      font-size: 18px;
+      color: $color-text;
+    }
+
+    em {
+      font-style: normal;
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: $color-text-dim;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: $color-text-muted;
+    transition: color 0.25s $ease;
+
+    &:hover {
+      color: $color-text;
+    }
+
+    &--active {
+      color: $color-brass-light;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  // Телефон — единственное действие в шапке, поэтому он чуть заметнее ссылок
+  &__phone {
+    font-size: 14px;
+    color: $color-brass-light;
+    white-space: nowrap;
+    transition: color 0.25s $ease;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+
+  &__nav-contacts {
+    display: none;
+  }
+
+  &__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 1px;
+      margin: 0 auto;
+      background: $color-text;
+      transition: transform 0.3s $ease, opacity 0.2s $ease;
+    }
+  }
+
+  @include below($bp-md) {
+    &__phone {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__nav-contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      text-align: center;
+
+      a {
+        font-size: 20px;
+        font-family: $font-display;
+        color: $color-brass-light;
+      }
+
+      span {
+        font-size: 14px;
+        color: $color-text-dim;
+      }
+    }
+
+    &__nav {
+      position: fixed;
+      inset: 76px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      padding: 32px 18px;
+      overflow-y: auto;
+      background: $color-bg;
+      opacity: 0;
+      // visibility убирает закрытое меню из таб-порядка:
+      // без него ссылки ловились клавиатурой сквозь невидимый слой.
+      visibility: hidden;
+      transition: opacity 0.3s $ease, visibility 0.3s;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &__link {
+      font-family: $font-display;
+      font-size: 24px;
+      color: $color-text;
+    }
+  }
+
+  &--open {
+    background: $color-bg;
+    // Важно: любой backdrop-filter на шапке делает её containing block
+    // для вложенного position: fixed — открытое меню перестало бы
+    // цепляться за окно и складывалось внутри 76px шапки.
+    backdrop-filter: none;
+
+    .header__nav {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .header__burger span:first-child {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .header__burger span:nth-child(2) {
+      opacity: 0;
+    }
+    .header__burger span:last-child {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.gallery-preview {
+  @include section-space;
+  border-top: 1px solid $color-line;
+
+  &__more {
+    margin-top: 36px;
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.games-page {
+  padding-top: 20px;
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $color-line;
+  }
+
+  &__filter {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $color-text-dim;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.25s $ease;
+
+    &:hover {
+      color: $color-text;
+    }
+
+    &--active {
+      color: $color-brass-light;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @include below($bp-md) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__note {
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 1px solid $color-line;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: $color-text-muted;
+      font-size: 15px;
+      max-width: 620px;
+    }
+  }
+}

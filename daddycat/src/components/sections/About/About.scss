@@ -1,0 +1,38 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.about {
+  @include section-space(110px, 70px);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 64px;
+    align-items: center;
+
+    @include below($bp-md) {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+
+  &__media {
+    height: 420px;
+
+    @include below($bp-md) {
+      height: 300px;
+    }
+  }
+
+  &__content {
+    h2 {
+      font-size: clamp(27px, 3.6vw, 38px);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: $color-text-muted;
+      max-width: 520px;
+    }
+  }
+}

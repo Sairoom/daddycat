@@ -1,0 +1,24 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.section-title {
+  max-width: 640px;
+  margin-bottom: 44px;
+
+  &__kicker {
+    display: block;
+    @include label;
+    margin-bottom: 16px;
+  }
+
+  &__heading {
+    font-size: clamp(27px, 3.6vw, 38px);
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-text-muted;
+    font-size: 16px;
+  }
+}

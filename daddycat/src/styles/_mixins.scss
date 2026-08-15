@@ -1,0 +1,37 @@
+@use 'variables' as *;
+
+@mixin below($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 28px;
+
+  @include below($bp-sm) {
+    padding: 0 18px;
+  }
+}
+
+// Вертикальный ритм секции: на телефоне воздуха нужно меньше
+@mixin section-space($desktop: 100px, $mobile: 62px) {
+  padding-top: $desktop;
+  padding-bottom: $desktop;
+
+  @include below($bp-sm) {
+    padding-top: $mobile;
+    padding-bottom: $mobile;
+  }
+}
+
+// Мелкая подпись над заголовком
+@mixin label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-text-dim;
+}

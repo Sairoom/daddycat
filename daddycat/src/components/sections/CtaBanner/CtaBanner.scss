@@ -1,0 +1,36 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.cta {
+  padding: 100px 0 20px;
+  border-top: 1px solid $color-line;
+
+  @include below($bp-sm) {
+    padding-top: 62px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-size: clamp(27px, 3.6vw, 38px);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 460px;
+    color: $color-text-muted;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

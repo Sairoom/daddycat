@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="Daddy Cat Coffee">
+  <defs>
+    <linearGradient id="brass" x1="10" y1="0" x2="110" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8a6318"/>
+      <stop offset=".4" stop-color="#e7c069"/>
+      <stop offset=".7" stop-color="#c9962e"/>
+      <stop offset="1" stop-color="#e7c069"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="57" stroke="url(#brass)" stroke-width="2" opacity=".55"/>
+  <!-- цилиндр -->
+  <path d="M38 34h44l-4-20a3 3 0 0 0-3-2H45a3 3 0 0 0-3 2l-4 20Z" fill="url(#brass)"/>
+  <rect x="34" y="34" width="52" height="6" rx="3" fill="url(#brass)"/>
+  <rect x="44" y="18" width="32" height="5" fill="#14100d" opacity=".55"/>
+  <!-- уши -->
+  <path d="M36 46l-4-14 16 8-12 6Z" fill="url(#brass)"/>
+  <path d="M84 46l4-14-16 8 12 6Z" fill="url(#brass)"/>
+  <!-- морда -->
+  <path d="M60 44c-14 0-24 9-24 22 0 15 11 26 24 26s24-11 24-26c0-13-10-22-24-22Z"
+        stroke="url(#brass)" stroke-width="2.5" fill="none"/>
+  <!-- гогглы -->
+  <circle cx="49" cy="66" r="8" stroke="url(#brass)" stroke-width="2.5" fill="none"/>
+  <circle cx="71" cy="66" r="8" stroke="url(#brass)" stroke-width="2.5" fill="none"/>
+  <path d="M57 66h6" stroke="url(#brass)" stroke-width="2.5"/>
+  <circle cx="49" cy="66" r="2.6" fill="url(#brass)"/>
+  <circle cx="71" cy="66" r="2.6" fill="url(#brass)"/>
+  <!-- нос и усы -->
+  <path d="M60 76l-3.5 4h7L60 76Z" fill="url(#brass)"/>
+  <path d="M34 74l12 3M34 82l12-1M86 74l-12 3M86 82l-12-1" stroke="url(#brass)" stroke-width="1.6" opacity=".8"/>
+  <!-- шестерня-подпись -->
+  <circle cx="60" cy="103" r="7" stroke="url(#brass)" stroke-width="2" fill="none"/>
+  <path d="M60 92v4M60 110v4M49 103h4M67 103h4" stroke="url(#brass)" stroke-width="2"/>
+</svg>

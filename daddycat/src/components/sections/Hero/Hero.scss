@@ -1,0 +1,66 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.hero {
+  padding: 72px 0 40px;
+
+  @include below($bp-sm) {
+    padding-top: 44px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+
+    @include below($bp-md) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__kicker {
+    display: block;
+    @include label;
+    margin-bottom: 22px;
+  }
+
+  &__title {
+    font-size: clamp(42px, 8vw, 88px);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  &__dot {
+    color: $color-brass;
+  }
+
+  &__text {
+    max-width: 440px;
+    font-size: 17px;
+    color: $color-text-muted;
+    margin-bottom: 34px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  &__address {
+    margin: 0;
+    font-size: 13px;
+    color: $color-text-dim;
+  }
+
+  &__photo {
+    height: 520px;
+
+    @include below($bp-md) {
+      height: 340px;
+    }
+  }
+}

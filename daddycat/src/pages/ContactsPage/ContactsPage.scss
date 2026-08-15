@@ -1,0 +1,103 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 56px;
+  padding-top: 20px;
+  align-items: start;
+
+  @include below($bp-md) {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  // Блоки идут в две колонки: без формы одна колонка вытягивалась бы в столбик
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+
+    @include below($bp-sm) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__block {
+    padding-top: 20px;
+    margin-bottom: 28px;
+    border-top: 1px solid $color-line;
+
+    h2 {
+      font-family: $font-body;
+      @include label;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin: 0 0 4px;
+      font-size: 16px;
+      color: $color-text;
+    }
+
+    a:hover {
+      color: $color-brass-light;
+    }
+  }
+
+  &__hint {
+    margin-top: 10px !important;
+    font-size: 14px !important;
+    color: $color-text-dim !important;
+    max-width: 340px;
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px !important;
+    font-size: 15px;
+    color: $color-text-muted;
+  }
+
+  &__rows li {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 330px;
+    font-size: 16px;
+    color: $color-text-muted;
+    margin-bottom: 6px;
+
+    span:last-child {
+      color: $color-text;
+      text-align: right;
+    }
+  }
+
+  &__aside {
+    position: sticky;
+    top: 100px;
+
+    @include below($bp-md) {
+      position: static;
+    }
+  }
+
+  &__photo {
+    height: 460px;
+
+    @include below($bp-md) {
+      height: 300px;
+    }
+  }
+
+  &__caption {
+    margin: 14px 0 0;
+    font-size: 14px;
+    color: $color-text-dim;
+  }
+}

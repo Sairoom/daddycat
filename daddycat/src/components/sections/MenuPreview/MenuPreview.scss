@@ -1,0 +1,61 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.menu-preview {
+  @include section-space;
+  border-top: 1px solid $color-line;
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    .section-title {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+
+  &__tab {
+    padding: 0 0 4px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: $color-text-dim;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.25s $ease, border-color 0.25s $ease;
+
+    &:hover {
+      color: $color-text;
+    }
+
+    &--active {
+      color: $color-brass-light;
+      border-bottom-color: $color-brass;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 56px;
+
+    @include below($bp-md) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__more {
+    margin-top: 36px;
+  }
+}
