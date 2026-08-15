@@ -14,7 +14,8 @@
       "Bash(curl -s -o /dev/null -w \"route /games: %{http_code}\\\\n\" http://localhost:4173/games)",
       "Bash(curl -s http://localhost:4173/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/assets/photos/README.md)",
-      "Bash(pkill -f \"serve -s build\")"
+      "Bash(pkill -f \"serve -s build\")",
+      "Bash(npx react-scripts *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\eroha\\Desktop\\daddy cat\\daddycat\\src"
